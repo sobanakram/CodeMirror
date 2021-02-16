@@ -560,7 +560,7 @@ CodeMirror.defineMode("markdown", function(cmCfg, modeCfg) {
     if (modeCfg.xml && ch === '<' && stream.match(/^\/\w*?>/)) {
       state.md_inside = false;
       return "tag";
-    } else if (ch === "*" || ch === "_") {
+    } else if (ch === "*") {
       var len = 1, before = stream.pos == 1 ? " " : stream.string.charAt(stream.pos - 2)
       while (len < 3 && stream.eat(ch)) len++
       var after = stream.peek() || " "
